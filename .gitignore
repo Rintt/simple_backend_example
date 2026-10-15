@@ -1,0 +1,6 @@
+__pycache__/
+.pytest_cache/
+data/
+node_modules/
+frontend/dist/
+tokens.json

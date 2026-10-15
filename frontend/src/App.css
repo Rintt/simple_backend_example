@@ -1,0 +1,110 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1d1d1f;
+  --muted: #6e6e73;
+  --border: #d2d2d7;
+  --accent: #0a66c2;
+  --negative: #c2410c;
+  --error-bg: #fdecea;
+  --error-fg: #a1260d;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161618;
+    --fg: #f5f5f7;
+    --muted: #a1a1a6;
+    --border: #3a3a3c;
+    --accent: #4c9aff;
+    --negative: #fb923c;
+    --error-bg: #3b1d19;
+    --error-fg: #ffb4a6;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, sans-serif;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+h1 { font-size: 1.5rem; }
+h2 { font-size: 1rem; margin-top: 24px; }
+
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+label {
+  display: grid;
+  gap: 4px;
+  font-weight: 600;
+}
+
+input, select, button {
+  font: inherit;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+label.check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: normal;
+}
+
+button {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:disabled { opacity: 0.5; cursor: default; }
+
+.error {
+  background: var(--error-bg);
+  color: var(--error-fg);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.result { margin-top: 24px; margin-bottom: 10px; }
+.value { font-size: 2rem; font-weight: 700; margin-bottom: 14px; }
+.meta { color: var(--muted); }
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 90px;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+.bar-track { background: var(--border); border-radius: 4px; height: 14px; }
+.bar { background: var(--accent); height: 100%; border-radius: 4px; }
+.bar.negative { background: var(--negative); }
+.bar-label, .bar-value { font-size: 0.9rem; color: var(--muted); }
+.bar-value { text-align: right; }
